@@ -45,7 +45,7 @@ function App() {
           <TodoStats />
           {tasks.length > 0 ? <TodoList /> : <EmptyState />}
         </NotebookContainer>
-        <AboutPage />
+        {/* <AboutPage /> */}
       </AppContainer>
     </ThemeProvider>
   );
