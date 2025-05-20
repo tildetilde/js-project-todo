@@ -7,7 +7,7 @@ const useStore = create(
     (set, get) => ({
       tasks: [],
       darkMode: false,
-      categories: ["Personal", "Work", "Shopping", "Housework"],
+      categories: ["Personal", "Relationships", "Work", "Home"],
 
       // Load tasks from localStorage
       loadTasks: () => {

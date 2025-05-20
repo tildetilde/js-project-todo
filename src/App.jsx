@@ -26,7 +26,7 @@ function App() {
       <AppContainer>
         <div>
           <p style={{ fontSize: "0.9rem", marginBottom: "1rem" }}>
-            List it. Do it. Get over it.
+            List it. Do it. Leave it.
           </p>
           <div
             style={{
