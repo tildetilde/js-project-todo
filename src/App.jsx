@@ -43,7 +43,7 @@ function App() {
               alignItems: "center",
             }}
           >
-            <Title>(O)FÄRDIG</Title>
+            <Title>LISTAT</Title>
             <ThemeToggle darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
           </div>
         </div>
