@@ -81,7 +81,7 @@ const customStyles = {
     ...base,
     backgroundColor: "transparent",
     border: "none",
-    borderBottom: "1px solid #000",
+    borderBottom: "1px solid #d0d0d0",
     borderRadius: 0,
     boxShadow: "none",
     fontSize: "1rem",
