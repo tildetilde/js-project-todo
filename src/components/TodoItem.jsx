@@ -12,7 +12,8 @@ const fadeIn = keyframes`
 
 const ItemContainer = styled.li`
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  gap: 12px;
   padding: 1.5rem 0;
   border-bottom: 1px solid ${(props) => props.theme.border};
   animation: ${fadeIn} 0.3s ease;
@@ -87,13 +88,6 @@ const TaskCategory = styled.span`
   font-weight: 500;
 `;
 
-const TallyContainer = styled.div`
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  color: ${(props) => props.theme.accent};
-  letter-spacing: 4px;
-`;
-
 const DeleteButton = styled.button`
   background: none;
   border: none;
@@ -116,28 +110,6 @@ const TodoItem = ({ task }) => {
 
   const handleToggle = () => {
     toggleTask(task.id);
-  };
-
-  const formatTally = (completed) => {
-    if (!completed) return "";
-
-    // Create tally marks (groups of 5)
-    const fullGroups = Math.floor(1 / 5);
-    const remainder = 1 % 5;
-
-    let tally = "";
-
-    // Add full groups (||||)
-    for (let i = 0; i < fullGroups; i++) {
-      tally += "||||/";
-    }
-
-    // Add remainder
-    for (let i = 0; i < remainder; i++) {
-      tally += "|";
-    }
-
-    return tally;
   };
 
   const overdue = task.dueDate && isTaskOverdue(task);
@@ -164,10 +136,6 @@ const TodoItem = ({ task }) => {
 
           <TaskCategory>{task.category}</TaskCategory>
         </TaskMeta>
-
-        {task.completed && (
-          <TallyContainer>{formatTally(task.completed)}</TallyContainer>
-        )}
       </ContentContainer>
 
       {showDelete && (
