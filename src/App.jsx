@@ -25,7 +25,15 @@ function App() {
       <GlobalStyle />
       <AppContainer>
         <div>
-          <p style={{ fontSize: "0.9rem", marginBottom: "1rem" }}>
+          <p
+            style={{
+              fontSize: "0.9rem",
+              marginBottom: "1rem",
+              padding: "0 2rem",
+              fontStyle: "italic",
+              fontFamily: '"Zen Kaku Gothic New", sans-serif',
+            }}
+          >
             List it. Do it. Leave it.
           </p>
           <div

@@ -12,7 +12,7 @@ export const AppContainer = styled.div`
 
 export const NotebookContainer = styled.div`
   background-color: ${(props) => props.theme.paper};
-  padding: 0;
+  padding: 1rem 2rem;
   position: relative;
 `;
 
@@ -26,6 +26,7 @@ export const Header = styled.header`
 
 export const Title = styled.h1`
   font-size: 8rem;
+  padding: 0 1.5rem;
   font-weight: 700;
   color: ${(props) => props.theme.title};
   letter-spacing: -2px;
