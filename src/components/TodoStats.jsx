@@ -36,7 +36,7 @@ const TodoStats = () => {
   return (
     <StatsContainer>
       <StatItem>
-        <span>Total:</span>
+        <span>Tasks:</span>
         <StatValue>{getTotalCount()}</StatValue>
       </StatItem>
       <StatItem>
