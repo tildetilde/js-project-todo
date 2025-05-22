@@ -14,6 +14,16 @@ export const lightTheme = {
   overdue: "#000000",
   categoryBg: "#f0f0f0",
   categoryText: "#333333",
+  select: {
+    background: "#f8f8f6",
+    border: "#d0d0d0",
+    text: "#000000",
+    placeholder: "#888888",
+    optionBg: "#f5f5f3",
+    optionHover: "#e0e0e0",
+    optionSelected: "#000000",
+    optionSelectedText: "#ffffff",
+  },
 };
 
 export const darkTheme = {
@@ -32,4 +42,14 @@ export const darkTheme = {
   overdue: "#bbbbbb",
   categoryBg: "#333333",
   categoryText: "#dddddd",
+  select: {
+    background: "#222222",
+    border: "#555555",
+    text: "#e0e0e0",
+    placeholder: "#888888",
+    optionBg: "#1c1c1c",
+    optionHover: "#333333",
+    optionSelected: "#ffffff",
+    optionSelectedText: "#000000",
+  },
 };

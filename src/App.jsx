@@ -9,7 +9,6 @@ import TodoList from "./components/TodoList";
 import TodoForm from "./components/TodoForm";
 import TodoStats from "./components/TodoStats";
 import EmptyState from "./components/EmptyState";
-import AboutPage from "./components/AboutPage";
 import ThemeToggle from "./components/ThemeToggle";
 import { lightTheme, darkTheme } from "./theme";
 

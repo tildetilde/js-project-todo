@@ -18,6 +18,10 @@ const ToggleButton = styled.button`
   &:hover {
     opacity: 0.7;
   }
+
+    @media (max-width: 350px) {
+    font-size: 0.75rem;
+  }
 `;
 
 const ThemeToggle = ({ darkMode, toggleDarkMode }) => {
