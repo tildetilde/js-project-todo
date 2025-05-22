@@ -55,7 +55,7 @@ const TaskText = styled.p`
   position: relative;
 
   ${(props) =>
-    props.completed &&
+    props.$completed &&
     css`
       color: ${(props) => props.theme.completed};
       text-decoration: line-through;
@@ -72,13 +72,14 @@ const TaskMeta = styled.div`
 
 const TaskDate = styled.span`
   display: inline-block;
+  color: ${(props) => props.theme.categoryText};
 `;
 
 const TaskDueDate = styled.span`
   display: inline-block;
   color: ${(props) =>
-    props.overdue ? props.theme.overdue : props.theme.completed};
-  font-weight: ${(props) => (props.overdue ? "bold" : "normal")};
+    props.$overdue ? props.theme.overdue : props.theme.completed};
+  font-weight: ${(props) => (props.$overdue ? "bold" : "normal")};
 `;
 
 const TaskCategory = styled.span`
@@ -122,13 +123,13 @@ const TodoItem = ({ task }) => {
       <Checkbox checked={task.completed} onClick={handleToggle} />
 
       <ContentContainer>
-        <TaskText completed={task.completed}>{task.text}</TaskText>
+        <TaskText $completed={task.completed}>{task.text}</TaskText>
 
         <TaskMeta>
           <TaskDate>Created: {getFormattedDate(task.createdAt)}</TaskDate>
 
           {task.dueDate && (
-            <TaskDueDate overdue={overdue}>
+            <TaskDueDate $overdue={overdue}>
               Due: {format(new Date(task.dueDate), "MMM d, yyyy")}
               {overdue && " (overdue)"}
             </TaskDueDate>

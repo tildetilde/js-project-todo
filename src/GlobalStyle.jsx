@@ -7,6 +7,13 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
 
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
   body {
     font-family: 'Inter', sans-serif;
     background-color: ${(props) => props.theme.background};

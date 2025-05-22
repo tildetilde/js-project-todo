@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import styled from "styled-components";
+import styled, { useTheme } from "styled-components";
 import { useStore } from "../store";
 import Select from "react-select";
 
@@ -76,66 +76,12 @@ const CompleteAllButton = styled(Button)`
   }
 `;
 
-const customStyles = {
-  control: (base) => ({
-    ...base,
-    backgroundColor: "transparent",
-    border: "none",
-    borderBottom: "1px solid #d0d0d0",
-    borderRadius: 0,
-    boxShadow: "none",
-    fontSize: "1rem",
-    color: "#000",
-    fontFamily: "Zen Kaku Gothic New, sans-serif",
-    padding: "0.5rem 0",
-    cursor: "pointer",
-  }),
-  menu: (base) => ({
-    ...base,
-    backgroundColor: "#f5f5f3",
-    border: "1px solid #000",
-    borderRadius: 0,
-    boxShadow: "none",
-    fontFamily: "Zen Kaku Gothic New, sans-serif",
-  }),
-  option: (base, { isFocused, isSelected }) => ({
-    ...base,
-    backgroundColor: isSelected
-      ? "#000"
-      : isFocused
-      ? "#dcdcdc"
-      : "transparent",
-    color: isSelected ? "#fff" : "#000",
-    cursor: "pointer",
-    fontWeight: isSelected ? "600" : "400",
-    padding: "0.5rem 1rem",
-    ":active": {
-      backgroundColor: "#000",
-      color: "#fff",
-    },
-    ":focus": {
-      backgroundColor: "#000",
-      color: "#fff",
-    },
-  }),
-  singleValue: (base) => ({
-    ...base,
-    color: "#000",
-  }),
-  placeholder: (base) => ({
-    ...base,
-    color: "#999",
-  }),
-  indicatorSeparator: () => ({
-    display: "none",
-  }),
-};
-
 const TodoForm = () => {
   const { addTask, completeAllTasks, categories } = useStore();
   const [text, setText] = useState("");
   const [category, setCategory] = useState("Personal");
   const [dueDate, setDueDate] = useState("");
+  const theme = useTheme();
 
   const categoryOptions = categories.map((cat) => ({
     value: cat,
@@ -149,6 +95,53 @@ const TodoForm = () => {
       setText("");
       setDueDate("");
     }
+  };
+
+  const customStyles = {
+    control: (base) => ({
+      ...base,
+      backgroundColor: "transparent",
+      border: "none",
+      borderBottom: `1px solid ${theme.border}`,
+      borderRadius: 0,
+      boxShadow: "none",
+      fontSize: "1rem",
+      color: theme.text,
+      fontFamily: "Zen Kaku Gothic New, sans-serif",
+      padding: "0.5rem 0",
+      cursor: "pointer",
+    }),
+    menu: (base) => ({
+      ...base,
+      backgroundColor: theme.paper,
+      border: `1px solid ${theme.border}`,
+      borderRadius: 0,
+      boxShadow: "none",
+      fontFamily: "Zen Kaku Gothic New, sans-serif",
+    }),
+    option: (base, { isFocused, isSelected }) => ({
+      ...base,
+      backgroundColor: isSelected
+        ? theme.text
+        : isFocused
+        ? theme.completed
+        : "transparent",
+      color: isSelected ? theme.paper : theme.text,
+      cursor: "pointer",
+      fontWeight: isSelected ? "600" : "400",
+      padding: "0.5rem 1rem",
+    }),
+    singleValue: (base) => ({
+      ...base,
+      color: theme.text,
+    }),
+    placeholder: (base) => ({
+      ...base,
+      color: theme.completed,
+    }),
+    indicatorSeparator: () => ({
+      display: "none",
+    }),
   };
 
   return (
