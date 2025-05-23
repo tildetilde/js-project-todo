@@ -25,7 +25,9 @@ const TodoList = () => {
 
   // Group tasks by category
   const tasksByCategory = categories.reduce((acc, category) => {
-    const categoryTasks = tasks.filter((task) => task.category === category);
+    const categoryTasks = tasks
+      .filter((task) => task.category === category)
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt)); // nyast först
     if (categoryTasks.length > 0) {
       acc[category] = categoryTasks;
     }
@@ -33,9 +35,9 @@ const TodoList = () => {
   }, {});
 
   // Handle tasks without a category
-  const uncategorizedTasks = tasks.filter(
-    (task) => !categories.includes(task.category)
-  );
+  const uncategorizedTasks = tasks
+    .filter((task) => !categories.includes(task.category))
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
   if (uncategorizedTasks.length > 0) {
     tasksByCategory["Other"] = uncategorizedTasks;
   }
