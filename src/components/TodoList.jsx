@@ -34,14 +34,6 @@ const TodoList = () => {
     return acc;
   }, {});
 
-  // Handle tasks without a category
-  const uncategorizedTasks = tasks
-    .filter((task) => !categories.includes(task.category))
-    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
-  if (uncategorizedTasks.length > 0) {
-    tasksByCategory["Other"] = uncategorizedTasks;
-  }
-
   return (
     <ListContainer>
       {Object.entries(tasksByCategory).map(([category, categoryTasks]) => (

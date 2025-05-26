@@ -42,4 +42,8 @@ export const Title = styled.h1`
   @media (max-width: 480px) {
     font-size: 3rem;
   }
+
+  @media (max-width: 350px) {
+    font-size: 2rem;
+  }
 `;

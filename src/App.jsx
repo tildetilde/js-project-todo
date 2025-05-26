@@ -33,7 +33,7 @@ function App() {
               fontFamily: '"Zen Kaku Gothic New", sans-serif',
             }}
           >
-            List it. Do it. Leave it.
+            You will never be complete, but your tasks can be.
           </p>
           <div
             style={{

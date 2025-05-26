@@ -149,7 +149,7 @@ const TodoForm = () => {
       <InputRow>
         <Input
           type="text"
-          placeholder="Put in a new task..."
+          placeholder="Add task"
           value={text}
           onChange={(e) => setText(e.target.value)}
           aria-label="Task description"
