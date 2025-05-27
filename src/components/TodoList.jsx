@@ -35,16 +35,18 @@ const TodoList = () => {
   }, {});
 
   return (
-    <ListContainer>
+    <>
       {Object.entries(tasksByCategory).map(([category, categoryTasks]) => (
         <CategorySection key={category}>
           <CategoryTitle>{category}</CategoryTitle>
-          {categoryTasks.map((task) => (
-            <TodoItem key={task.id} task={task} />
-          ))}
+          <ul style={{ listStyle: "none", padding: 0 }}>
+            {categoryTasks.map((task) => (
+              <TodoItem key={task.id} task={task} />
+            ))}
+          </ul>
         </CategorySection>
       ))}
-    </ListContainer>
+    </>
   );
 };
 

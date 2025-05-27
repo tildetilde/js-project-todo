@@ -78,7 +78,7 @@ const TaskDate = styled.span`
 const TaskDueDate = styled.span`
   display: inline-block;
   color: ${(props) =>
-    props.$overdue ? props.theme.overdue : props.theme.completed};
+    props.$overdue ? props.theme.categoryText : props.theme.completed};
   font-weight: ${(props) => (props.$overdue ? "bold" : "normal")};
 `;
 
